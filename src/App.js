@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { Fragment, useState } from "react";
+import Tasks from "./components/Tasks";
+import "./App.css";
+const App = () => {
+  const [tasks, setTasks] = useState([
+    {
+      id: "1",
+      title: "exemplo 1",
+      completed: false,
+    },
+    {
+      id: "2",
+      title: "exemplo 2",
+      completed: true,
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <Tasks tasks={tasks} />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
